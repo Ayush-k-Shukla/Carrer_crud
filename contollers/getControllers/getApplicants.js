@@ -1,10 +1,10 @@
 const Job = require('../../models/Job')
 
 module.exports = async(req,res) => {
-  const filter = req.query.filter
+  const jobid = req.params.id
   try {
-    let jobs = filter ? await Job.find({workType:filter}) : await Job.find()
-    return res.status(200).send(jobs)
+    const result = await Job.findById(jobid,{'applications':1})
+    return res.status(200).send(result)
   } catch(err) {
     return res.status(500).send({ errorMsg: err.message })
   }
