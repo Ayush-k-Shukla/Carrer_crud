@@ -7,6 +7,6 @@ router.route('/jobs/:id').get(require('../contollers/getControllers/getJobsbyID'
 router.route('/jobs/update/:id').patch(require('../contollers/updateControllers/updateJobs'))
 router.route('/jobs/delete/:id').delete(require('../contollers/deleteControllers/deleteJobs'))
 router.route('/jobs/:id/applicants').get(require('../contollers/getControllers/getApplicants'))
-
+router.route('/jobs/:id/applicants').get(require('../contollers/getControllers/getApplicants'))
 
 module.exports = router
